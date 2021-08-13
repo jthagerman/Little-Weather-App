@@ -5,9 +5,8 @@ import { Login, Signup } from "./components/AuthForm";
 import Home from "./components/Home";
 import { me } from "./store";
 import Search from "./components/search/Search";
-import Weather from "./components/weather/weather";
+import Weather from "./components/weather/Weather.js";
 import Homepage from "./Homepage";
-import ForecastHandler from "./components/weather/ForecastHandler";
 
 /**
  * COMPONENT
@@ -35,11 +34,11 @@ class Routes extends Component {
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route exact path="/weather" component={Weather} />
-            <Route
+            {/* <Route
               exact
               part="/weather/:forecast"
               component={ForecastHandler}
-            />
+            /> */}
           </Switch>
         )}
       </section>
