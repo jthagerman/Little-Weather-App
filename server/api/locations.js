@@ -47,7 +47,7 @@ router.get("/", async (req, res, next) => {
   } else {
     try {
       let zipCode = Number(query);
-      let location = await Location.findByPk(zipCode);
+      let location = await Location.findOne({zip: zipCode});
       res.json(location);
     } catch (error) {
       next(error);
@@ -59,7 +59,9 @@ router.get("/", async (req, res, next) => {
 router.get("/:zip", async (req, res, next) => {
   try {
     let zipNum = Number(req.params.zip);
-    const locations = await Location.findByPk(zipNum);
+    const locations = await Location.findOne({
+      zip: zipNum
+    });
     res.json(locations);
   } catch (err) {
     next(err);

@@ -6,7 +6,6 @@ const Location = db.define('location', {
     type: Sequelize.INTEGER,
     defaultValue: 0,
     unique: true,
-    primaryKey: true,
   },
   lat: {
     type: Sequelize.FLOAT,
