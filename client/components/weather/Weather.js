@@ -89,7 +89,9 @@ class Weather extends React.Component {
             <div>
               {this.state.loading === true ? (
                 <p>
-                  <h1 style={{fontSize: "80px", textAlign: "center"}}>Loading</h1>{" "}
+                  <h1 style={{ fontSize: "80px", textAlign: "center" }}>
+                    Loading
+                  </h1>{" "}
                   <ClipLoader
                     color="ffffff"
                     loading="ffffff"
@@ -126,7 +128,7 @@ class Weather extends React.Component {
          onClick={(event) => this.handleSwitches(event)}
        >
          Hourly */}
-       {/* </button> */}
+          {/* </button> */}
           <button
             className="toggle"
             name="now"
