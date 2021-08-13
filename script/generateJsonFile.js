@@ -3,12 +3,15 @@ const fs = require("fs");
 const parse = require("csv-parse");
 
 const trimCords = (cord) => {
+
   let split = cord.split(".");
+
   if (split[1].length > 3) {
     let substring = split[1];
-    split[1] = Number("." + substring.slice(0, 3));
+    split[1] = ("." + substring.slice(0, 3));
   }
-  return split[0] + split[1];
+  console.log("two values",split[0] + split[1])
+  return Number(split[0] + split[1]);
 };
 
 const processFile = async () => {
@@ -38,7 +41,6 @@ const processFile = async () => {
 
 (async () => {
   const records = await processFile();
-  console.log(records);
   fs.writeFile ("input.json", JSON.stringify(records), function(err) {
     if (err) throw err;
     console.log('complete');

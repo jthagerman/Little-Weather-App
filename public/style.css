@@ -1,21 +1,21 @@
 body {
-  font-family: sans-serif;
+  margin: 0px;
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #121826;
+  color: white
+
+}
+button {
+  font-family: 'Lato', sans-serif;
+}
+
+h1{
+  margin: 0px;
 }
 
 a {
+  color: white;
   text-decoration: none;
-}
-
-label {
-  display: block;
-}
-
-nav a {
-  display: inline-block;
-  margin: 1em;
-}
-
-form div {
-  margin: 1em;
-  display: inline-block;
 }

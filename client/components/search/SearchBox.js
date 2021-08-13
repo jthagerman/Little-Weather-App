@@ -1,0 +1,22 @@
+import React from "react";
+import { useHistory } from "react-router-dom";
+import MagGlass from "../icons/MagGlass";
+
+const SearchBox = (props) => {
+  let history = useHistory();
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      let searchKey = event.target.value;
+      history.push(`/search/${searchKey}`);
+    }
+  };
+  return (
+    <span>
+      <input className="search-input" type="text" onKeyDown={handleKeyDown} placeholder="Search zip code or city" />
+      <MagGlass />
+    </span>
+  );
+};
+
+export default SearchBox;

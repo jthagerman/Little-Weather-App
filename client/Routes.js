@@ -4,6 +4,11 @@ import {withRouter, Route, Switch, Redirect} from 'react-router-dom'
 import { Login, Signup } from './components/AuthForm';
 import Home from './components/Home';
 import {me} from './store'
+import Search from './components/search/Search';
+import Weather from './weather/weather';
+import Homepage from './Homepage';
+import ForecastHandler from './weather/ForecastHandler';
+
 
 /**
  * COMPONENT
@@ -17,20 +22,27 @@ class Routes extends Component {
     const {isLoggedIn} = this.props
 
     return (
-      <div>
+      <section>
         {isLoggedIn ? (
           <Switch>
             <Route path="/home" component={Home} />
+            <Route path="/search/:query" component={Search} />
             <Redirect to="/home" />
           </Switch>
         ) : (
           <Switch>
-            <Route path='/' exact component={ Login } />
+            <Route path='/' exact component={ Homepage } />
+            <Route path="/search/:query" component={Search} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
+            <Route exact path="/weather" component={Weather}/>
+            <Route exact part="/weather/:forecast" component={ForecastHandler}/>
+
+
           </Switch>
         )}
-      </div>
+      </section>
+
     )
   }
 }

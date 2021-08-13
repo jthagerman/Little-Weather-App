@@ -18,7 +18,13 @@ module.exports = {
             '@babel/preset-react'
           ]
         }
-      }
+      },
+      {
+        test: /\.(jpg|png)$/,
+        use: {
+          loader: 'url-loader',
+        },
+      },
     ]
   }
 }
