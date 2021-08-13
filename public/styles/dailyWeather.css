@@ -1,0 +1,39 @@
+
+
+#daily-weather-holder {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  max-width: 1200px;
+
+}
+
+.dailyWeatherModule {
+  color: white;
+  background-color: rgba(21, 14, 29, .3);
+  border-radius: 10px;
+  width: 140px;
+
+  text-align: center;
+  margin: 4px;
+
+}
+
+.dailyWeatherModule:hover{
+  background-color: rgba(21, 14, 29, .4);
+  transition: 0.25s;
+
+}
+
+.dailyWeatherModule h1 {
+  font-size: 2em;
+  margin-top: 5px;
+}
+
+.dailyWeatherModule h2 {
+  padding: 0px;
+
+}
+
+

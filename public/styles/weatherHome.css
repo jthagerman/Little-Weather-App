@@ -21,3 +21,51 @@
   margin: auto
 }
 
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 738px;
+}
+
+.toggle {
+
+  padding: 10px;
+  border: 0px;
+  width: 200px;
+  height: 90px;
+  background-color: rgba(21, 14, 29, .5) ;
+  color: white;
+  font-size: 18px;
+
+
+}
+.toggle:hover{
+  background-color: rgba(21, 14, 29, .7) ;
+  transition: 0.25s;
+
+}
+
+.toggle:first-child{
+border-top-left-radius:25px;
+/* border-top-right-radius
+border-bottom-right-radius */
+border-bottom-left-radius:25px;
+}
+
+.toggle:last-child{
+
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+
+  }
+
+#toggle-holder {
+  display: block;
+  margin: auto;
+  max-width: 400px
+
+}
+

@@ -33,6 +33,7 @@
     "morgan": "^1.9.1",
     "pg": "^8.5.1",
     "react-bootstrap-icons": "^1.5.0",
+    "react-search-autocomplete": "^5.4.2",
     "react-spinners": "^0.11.0",
     "sequelize": "^6.3.5"
   },

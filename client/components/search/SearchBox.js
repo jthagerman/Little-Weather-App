@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import MagGlass from "../icons/MagGlass";
 
+
 const SearchBox = (props) => {
   let history = useHistory();
 
@@ -13,10 +14,12 @@ const SearchBox = (props) => {
   };
   return (
     <span>
-      <input className="search-input" type="text" onKeyDown={handleKeyDown} placeholder="Search zip code or city" />
-      <MagGlass />
+      <input className="search-input hidden-when-small" type="text" onKeyDown={handleKeyDown} placeholder="Search zip code or city" />
+      {/* <MagGlass className="hidden-when-small" /> */}
     </span>
   );
 };
 
 export default SearchBox;
+
+
