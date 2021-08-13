@@ -89,7 +89,7 @@ class Weather extends React.Component {
             <div>
               {this.state.loading === true ? (
                 <p>
-                  <h1 style={{ fontSize: "80px", textAlign: "center" }}>
+                  <h1 style={{ fontSize: "50px", textAlign: "center" }}>
                     Loading
                   </h1>{" "}
                   <ClipLoader

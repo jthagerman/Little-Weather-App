@@ -7,6 +7,7 @@
   object-fit: cover;
   z-index: -10;
   box-shadow: 0 0 20px 20px #121826 inset;
+
   filter: blur(0.1px);
   -webkit-filter: blur(0.1px);
   opacity: 80%;
@@ -18,9 +19,12 @@
   height: 200px;
   width: 100vw;
   top: -77px;
+
+  background-image: -webkit-linear-gradient();
   background-image: linear-gradient(
     to top,
-    rgba(255, 0, 0, 0),
+    rgba(0, 0, 0, 0),
     rgba(18, 24, 38, 1)
   );
 }
+

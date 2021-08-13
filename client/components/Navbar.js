@@ -14,11 +14,11 @@ import bg8 from '../../public/images/tree-736875.jpg'
 import bg9 from '../../public/images/1field.jpg'
 import bg10 from '../../public/images/1winter.jpg'
 import bg11 from '../../public/images/1milk.jpg'
-import bg12 from '../../public/images/1thunder.jpg'
+// import bg12 from '../../public/images/1thunder.jpg'
 // import bg9 from '../../public/images/tree-736885.jpg'
 import { List } from 'react-bootstrap-icons';
 
-let bg = [bg1,bg2,bg4,bg6,bg7,bg8, bg9, bg10,bg11,bg12]
+let bg = [bg1,bg2,bg4,bg6,bg7,bg8, bg9, bg10,bg11]
 
 
 const getRandomBGPath = () => {
