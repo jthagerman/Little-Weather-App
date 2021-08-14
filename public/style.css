@@ -1,6 +1,6 @@
 body {
   margin: 0px;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #121826;
@@ -8,13 +8,21 @@ body {
   /* background-color: #150e1d; */
   color: white;
   user-select: none;
-
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
 }
+body {
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+}
+
 button {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
-h1{
+h1 {
   margin: 0px;
 }
 
@@ -23,11 +31,33 @@ a {
   text-decoration: none;
 }
 
+footer {
+  position: absolute;
+  bottom: -100px;
+  width: 100%;
+  height: 50px;
+  margin:auto
+}
+footer p {
+  display: block;
+  margin: auto;
+  width: 500px;
+  text-align: center;
+
+}
+
+footer p:hover{
+  text-decoration: underline;
+}
+
+.particles-holder {
+  position: absolute;
+  z-index: -8;
+}
 
 @media (min-width: 810px) {
   /* .nav-bar{
     color: purple;
     background-color: palegreen;
   } */
-
 }

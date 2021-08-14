@@ -7,6 +7,8 @@ import DailyModule from "./DailyModule";
 import Hourly from "./Hourly";
 import LoadingModule from "./handlers/loadingModule";
 import ErrorLoadingPage from "./handlers/ErrorLoadingPage";
+import Chart from "./Chart";
+import RainDonut from "./RainDonut";
 
 class Weather extends React.Component {
   constructor(props) {
@@ -114,7 +116,27 @@ class Weather extends React.Component {
                       7-day
                     </button>
                   </div>
-                  <Hourly weather={this.props.weather.hourly} />
+                  <Chart
+                    weather={this.props.weather}
+                    stateName={this.props.weather.location}
+                  />
+                  <section className="donut-holder">
+                    <h1 className="donut-label">Hourly Precipitation Chances</h1>
+                    <div id="donut-row">
+                      <RainDonut
+                        weather={this.props.weather}
+                        slice={true}
+                        title={"36 hours"}
+                      />
+                      <RainDonut
+                        weather={this.props.weather}
+                        slice={false}
+                        title={"7 days"}
+                      />
+                    </div>
+                  </section>
+
+                  {/* <Hourly weather={this.props.weather} stateName={this.props.weather.location} /> */}
                 </>
               )}
             </div>

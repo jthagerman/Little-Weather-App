@@ -7,6 +7,7 @@ import { me } from "./store";
 import Search from "./components/search/Search";
 import Weather from "./components/weather/Weather.js";
 import Homepage from "./Homepage";
+import About from "./components/About";
 
 /**
  * COMPONENT
@@ -34,7 +35,8 @@ class Routes extends Component {
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route exact path="/weather" component={Weather} />
-            {/* <Route
+            <Route path="/about" component={About}/>
+            {/* <Routet
               exact
               part="/weather/:forecast"
               component={ForecastHandler}
