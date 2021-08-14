@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import CurrentWeather from "./CurrentWeather";
 import DailyModule from "./DailyModule";
 import Hourly from "./Hourly";
-import LoadingModule from "./handlers/loadingModule";
+import LoadingModule from "./handlers/LoadingModule";
 import ErrorLoadingPage from "./handlers/ErrorLoadingPage";
 import Chart from "./Chart";
 import RainDonut from "./RainDonut";
@@ -121,7 +121,9 @@ class Weather extends React.Component {
                     stateName={this.props.weather.location}
                   />
                   <section className="donut-holder">
-                    <h1 className="donut-label">Hourly Precipitation Chances</h1>
+                    <h1 className="donut-label">
+                      Hourly Precipitation Chances
+                    </h1>
                     <div id="donut-row">
                       <RainDonut
                         weather={this.props.weather}
