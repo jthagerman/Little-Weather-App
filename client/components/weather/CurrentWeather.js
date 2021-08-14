@@ -1,5 +1,5 @@
 import React from "react";
-import { Sun } from 'react-bootstrap-icons';
+import { Sun, Wind } from "react-bootstrap-icons";
 
 import ForecastHandler from "./handlers/forecastHandlers";
 
@@ -11,15 +11,10 @@ const CurrentWeather = (props) => {
     <div className="weather-data">
       <ForecastHandler size={180} weather={currentWeather.shortForecast} />
       <p className="big-temp-text">{currentWeather.temperature}&#176;</p>
-      <p>{currentWeather.shortForecast}</p>
-      <p>day? {currentWeather.isDaytime ? "no" : "yes"}</p>
+      <p className="current-conditions">{currentWeather.shortForecast}</p>
       <p>
-        Winds {currentWeather.windSpeed} {currentWeather.windDirection}
+        {/* <span><Wind/>{currentWeather.windSpeed} {currentWeather.windDirection}</span> */}
       </p>
-      <p>StartTime {currentWeather.startTime}</p>
-      <h1>
-        {location.city} , {location.state}
-      </h1>
     </div>
   );
 };

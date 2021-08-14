@@ -19,13 +19,13 @@
   background-color: #5022aa;
   border: 0px;
   color: white;
-  font-weight: bold;
   border-radius: 999px;
   letter-spacing: 1px;
   padding-right: 28px;
   padding-left: 28px;
   padding-top: 12px;
   padding-bottom: 12px;
+  font-size: 18px;
 }
 
 .nav-bar button:hover {
@@ -38,7 +38,7 @@
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  font-weight: bold;
+
 }
 
 .nav-right {

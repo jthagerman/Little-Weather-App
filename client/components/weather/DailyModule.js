@@ -23,7 +23,6 @@ const DailyModule = (props) => {
         forecast: element.shortForecast,
       });
     } else {
-      console.log(element.name);
       if (element.name.includes("Night") || element.name.includes("Tonight")) {
         simplifiedArray[simplifiedArray.length - 1].low = element.temperature;
       } else {

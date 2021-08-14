@@ -1,36 +1,25 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getCurrentWeatherThunk } from "../../store/weather";
-import { useState } from "react";
-import { css } from "@emotion/react";
-import ClipLoader from "react-spinners/ClipLoader";
 import { Link } from "react-router-dom";
 import CurrentWeather from "./CurrentWeather";
 import DailyModule from "./DailyModule";
-
-const override = css`
-  display: block;
-  margin: 0 auto;
-  border-color: white;
-`;
+import Hourly from "./Hourly";
+import LoadingModule from "./handlers/loadingModule";
+import ErrorLoadingPage from "./handlers/ErrorLoadingPage";
 
 class Weather extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.state = {
       loading: false,
       error: false,
       selected: "now",
     };
     this.handleSwitches = this.handleSwitches.bind(this);
-    // console.log(this.props.history.location.state.data);
-    //const data = this.props.history.location.state.data
-    //console.log(data, "here is the data")
   }
 
   componentDidMount() {
-    console.log("i am mounted");
     try {
       if (this.props.history.location.state.data) {
         let location = this.props.location.state.data;
@@ -71,84 +60,70 @@ class Weather extends React.Component {
       default:
         return;
     }
-    console.log(this.state.selected);
   }
 
   render() {
     let currentWeather = this.props.weather.now || [];
-    if (currentWeather.length > 1) {
-      // currentWeather = c
-    }
 
     return (
       <>
-        <section className="hero">
+        <>
           {this.state.error === true ? (
-            <div>Error Loading Page</div>
+            <ErrorLoadingPage />
           ) : (
             <div>
               {this.state.loading === true ? (
-                <p>
-                  <h1 style={{ fontSize: "50px", textAlign: "center" }}>
-                    Loading
-                  </h1>{" "}
-                  <ClipLoader
-                    color="ffffff"
-                    loading="ffffff"
-                    css={override}
-                    size={200}
-                  />
-                </p>
+                <LoadingModule />
               ) : (
                 <>
-                  {this.state.selected === "10-day" ? (
-                    <div className="seven-day">
-                      <DailyModule weather={this.props.weather.forecast} />
-                    </div>
-                  ) : (
-                    <>
-                      {this.state.selected === "hourly" ? (
-                        <span>Hourly</span>
-                      ) : (
-                        <CurrentWeather
-                          data={currentWeather}
-                          loc={this.props.weather.location}
-                        />
-                      )}
-                    </>
-                  )}
+                  <div className="location-headline">
+                    {this.props.weather.location.city},{" "}
+                    {this.props.weather.location.state}
+                  </div>
+                  <section className="hero">
+                    {this.state.selected === "10-day" ? (
+                      <div className="seven-day">
+                        <DailyModule weather={this.props.weather.forecast} />
+                      </div>
+                    ) : (
+                      <>
+                        {this.state.selected === "hourly" ? (
+                          <span>Hourly</span>
+                        ) : (
+                          <CurrentWeather
+                            data={currentWeather}
+                            loc={this.props.weather.location}
+                          />
+                        )}
+                      </>
+                    )}
+                  </section>
+                  <div id="toggle-holder">
+                    <button
+                      className="toggle"
+                      name="now"
+                      onClick={(event) => this.handleSwitches(event)}
+                    >
+                      Now
+                    </button>
+                    <button
+                      className="toggle"
+                      name="10-day"
+                      onClick={(event) => this.handleSwitches(event)}
+                    >
+                      7-day
+                    </button>
+                  </div>
+                  <Hourly weather={this.props.weather.hourly} />
                 </>
               )}
             </div>
           )}
-        </section>
-        <div id="toggle-holder">
-          {/* <button
-         name="hourly"
-         onClick={(event) => this.handleSwitches(event)}
-       >
-         Hourly */}
-          {/* </button> */}
-          <button
-            className="toggle"
-            name="now"
-            onClick={(event) => this.handleSwitches(event)}
-          >
-            Now
-          </button>
-          <button
-            className="toggle"
-            name="10-day"
-            onClick={(event) => this.handleSwitches(event)}
-          >
-            7-day
-          </button>
-        </div>
+        </>
       </>
     );
   }
 }
-
 const mapState = (state) => {
   return {
     weather: state.weatherReducer,

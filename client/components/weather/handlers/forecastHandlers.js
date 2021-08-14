@@ -103,7 +103,7 @@ const ForecastHandler = (props) => {
 
 
     default:
-      console.log("weahter condition noput found", weather);
+      console.log("weather condition output not found", weather);
       return <Sun size={size}></Sun>;
   }
 };
