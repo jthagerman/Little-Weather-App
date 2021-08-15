@@ -24,7 +24,7 @@ const reduceToType = (hourArray) => {
       ].includes(r)
     );
 
-    console.log(forecast)
+
     if (clearW) clear++;
     else if (cloudy) {
       if(forecast.includes('slightly')) clear++

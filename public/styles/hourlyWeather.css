@@ -50,7 +50,7 @@
   padding: 30px;
   width: 400px;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 50px;
   font-size: 24px;
 }
 
@@ -59,3 +59,33 @@
   flex-direction: column;
   align-items: center;
 }
+
+
+.hourly-button-holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.hourly-button-holder button {
+  background-color: #5022aa;
+  color: white;
+  width: 170px;
+  height: 50px;
+  border: 0px;
+  margin-top: 40px;
+  font-size: 18px;
+  border-radius: 999px;
+  margin: 10px;
+}
+
+.hourly-button-holder button:hover {
+  background-color: #1e0d41;
+}
+
+.bar-holder {
+  display: block;
+  margin: auto;
+  max-width: 1400px;
+  margin-bottom: 100px;
+}
+

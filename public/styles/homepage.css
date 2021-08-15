@@ -8,8 +8,8 @@
   z-index: -10;
   box-shadow: 0 0 20px 20px #121826 inset;
 
-  filter: blur(0.1px);
-  -webkit-filter: blur(0.1px);
+  /* filter: blur(0.1px);
+  -webkit-filter: blur(0.1px); */
   opacity: 80%;
 }
 

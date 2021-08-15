@@ -9,6 +9,7 @@ import LoadingModule from "./handlers/LoadingModule";
 import ErrorLoadingPage from "./handlers/ErrorLoadingPage";
 import Chart from "./Chart";
 import RainDonut from "./RainDonut";
+import BarChart from "./barChart";
 
 class Weather extends React.Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class Weather extends React.Component {
         this.setState({ loading: true });
       }
     } catch (error) {
-      console.log("i am going to have to get location data from somewhere");
+      console.log("NO WEATHER DATA");
       this.setState({ error: true });
     }
   }
@@ -137,6 +138,10 @@ class Weather extends React.Component {
                       />
                     </div>
                   </section>
+                  <section className="bar-holder">
+                    <BarChart weather={this.props.weather.forecast}/>
+                  </section>
+                  <div id="space"></div>
 
                   {/* <Hourly weather={this.props.weather} stateName={this.props.weather.location} /> */}
                 </>

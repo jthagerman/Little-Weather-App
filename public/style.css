@@ -33,7 +33,7 @@ a {
 
 footer {
   position: absolute;
-  bottom: -100px;
+  bottom: 0px;
   width: 100%;
   height: 50px;
   margin:auto
@@ -50,6 +50,10 @@ footer p:hover{
   text-decoration: underline;
 }
 
+#space {
+  height: 50px;
+  display: block;
+}
 .particles-holder {
   position: absolute;
   z-index: -8;
@@ -61,3 +65,4 @@ footer p:hover{
     background-color: palegreen;
   } */
 }
+

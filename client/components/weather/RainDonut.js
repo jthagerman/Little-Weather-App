@@ -13,7 +13,7 @@ const RainDonut = React.memo((props) => {
   let array = reduceToType(hourly);
 
   const data = {
-    labels: ["Clear", "Cloudy", "Precipitation"],
+    labels: ["Clear", "Cloudy/Partly", "Precipitation"],
     datasets: [
       {
         label: "Hours",
