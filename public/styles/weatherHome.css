@@ -1,6 +1,6 @@
 .big-temp-text {
   color: white;
-  font-size: 200px;
+  font-size: 140px;
   margin: 0px;
   font-weight: normal;
 }
@@ -32,8 +32,8 @@
 .toggle {
   padding: 10px;
   border: 0px;
-  width: 200px;
-  height: 90px;
+  width: 40vw;
+  height: 80px;
   background-color: rgba(21, 14, 29, 0.5);
   color: white;
   font-size: 18px;
@@ -54,11 +54,11 @@ border-bottom-right-radius */
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
 }
-
 #toggle-holder {
-  display: block;
-  margin: auto;
-  max-width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: -30px;
 }
 
 .current-conditions {
@@ -82,7 +82,6 @@ border-bottom-right-radius */
   flex-direction: column;
   align-items: center;
   margin-top: 80px;
-
 }
 .weather-error p {
   font-size: 50px;
@@ -98,9 +97,31 @@ border-bottom-right-radius */
   height: 50px;
   font-size: 18px;
   font-weight: bolder;
-
-
 }
 .weather-error button:hover {
   background-color: rgb(29, 91, 87);
+}
+
+@media (min-width: 400px) {
+}
+
+@media (min-width: 680px) {
+  .toggle {
+    padding: 10px;
+    border: 0px;
+    width: 200px;
+    height: 90px;
+    background-color: rgba(21, 14, 29, 0.5);
+    color: white;
+    font-size: 18px;
+  }
+
+  #toggle-holder {
+    display: block;
+    margin: auto;
+    max-width: 400px;
+  }
+  .big-temp-text {
+    font-size: 200px;
+  }
 }

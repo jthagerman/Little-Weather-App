@@ -2,7 +2,6 @@ import React from "react";
 import HourlyWeatherTile from "./HourlyWeatherTile";
 
 const Hourly = (props) => {
-  console.log(props)
 
   let hourly = [];
   if (Array.isArray(props.weather.hourlyWeather)) {

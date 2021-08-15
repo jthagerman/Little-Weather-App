@@ -14,7 +14,6 @@ class Daily extends React.Component {
     }
   }
   render() {
-    console.log(this.props.weather)
     let weatherArray = this.props.weather || []
    return  (<div>
 

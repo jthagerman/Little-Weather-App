@@ -2,6 +2,7 @@ import axios from "axios";
 
 const SET_LOCATION = "SET_LOCATION";
 const SEARCH_LOCATION = "SEARCH_LOCATION";
+const FETCH_RANDOM = "FETCH_RANDOM";
 
 const initialState = { location: "", searchResults: [] };
 
@@ -19,11 +20,24 @@ export const searchLocation = (searchResults) => {
   };
 };
 
-export const searchLocationThunk = (query) => {
-
+export const fetchRandomThunk = () => {
   return async (dispatch) => {
     try {
-      const location = await axios.get("/api/locations/",{ params: { query: query }});
+      const location = await axios.get("/api/locations/random"
+      );
+      const locationData = location.data;
+      dispatch(setLocation(locationData));
+    } catch (error) {
+      console.error(error);
+    }
+  };
+};
+export const searchLocationThunk = (query) => {
+  return async (dispatch) => {
+    try {
+      const location = await axios.get("/api/locations/", {
+        params: { query: query },
+      });
       const locationData = location.data;
       dispatch(searchLocation(locationData));
     } catch (error) {

@@ -2,7 +2,6 @@ import React from 'react'
 import { Tornado } from 'react-bootstrap-icons'
 
 const ErrorLoadingPage = (props) => {
-  console.log(props)
   return  <section className="weather-error">
     <Tornado size={200}/>
     <p>Error Loading Page</p>

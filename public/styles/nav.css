@@ -53,8 +53,8 @@
 }
 
 .nav-logo {
-  visibility: visible;
-  font-size: 30px;
+  font-size: 25px;
+  font-weight: 900;
 }
 
 .nav-link {
@@ -78,6 +78,13 @@
   padding-left: 16px;
   padding-right: 16px;
 }
+
+.light-green {
+  color:  rgb(50, 159, 153);
+  font-weight: bolder;
+}
+
+
 
 input:focus,
 textarea:focus,
@@ -107,16 +114,6 @@ select:focus {
 
   .hidden-when-small {
     display: unset;
-  }
-  .nav-logo {
-    font-size: 25px;
-    font-weight: bold;
-  }
-
-
-  .light-green {
-    color:  rgb(50, 159, 153);
-    font-weight: bolder;
   }
 
 

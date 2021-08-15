@@ -12,12 +12,23 @@ const SearchBox = (props) => {
       history.push(`/search/${searchKey}`);
     }
   };
-  return (
-    <span>
-      <input className="search-input hidden-when-small" type="text" onKeyDown={handleKeyDown} placeholder="Search zip code or city" />
-      {/* <MagGlass className="hidden-when-small" /> */}
-    </span>
-  );
+
+  if(props.size === "large"){
+    return (
+      <span>
+        <input className="search-input-large" type="text" onKeyDown={handleKeyDown} placeholder={`Search zip code or city`} />
+      </span>
+    );
+
+  }else{
+    return (
+      <span>
+        <input className="search-input hidden-when-small" type="text" onKeyDown={handleKeyDown} placeholder="Search zip code or city" />
+      </span>
+    );
+
+  }
+
 };
 
 export default SearchBox;

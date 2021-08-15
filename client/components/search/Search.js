@@ -24,7 +24,6 @@ class Search extends React.Component {
     if (previousProps.searchResults !== this.props.searchResults) {
       if (!Array.isArray(this.props.searchResults)) {
         const query = this.props.searchResults;
-        console.log(query, "im checking the query");
         if (query !== null)
           this.props.setLocation(query)
           this.props.history.push("/weather", { data: query });

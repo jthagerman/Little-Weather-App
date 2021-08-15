@@ -22,14 +22,13 @@ const BarChart = (props) => {
   let data = props.weather || "";
 
   if (Array.isArray(data)) {
-    console.log(data)
     let shouldPop = false;
     if (data[0].name === "Tonight") {
       data = data.slice(1);
       shouldPop = true;
     }
     data.forEach((element) => {
-      if ((!element.name.includes("Night")) && ( !element.name.includes('Tonight'))){
+      if ((!element.name.includes("Overnight")) &&(!element.name.includes("Night")) && ( !element.name.includes('Tonight'))){
         highs.push(element.temperature);
         days.push(element.name);
       } else {

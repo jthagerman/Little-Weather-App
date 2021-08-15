@@ -57,6 +57,16 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+router.get("/random", async (req, res, next) => {
+  try {
+    let randomKey = Math.floor(Math.random() * 30000) + 1;
+    const locations = await Location.findByPk(randomKey);
+    res.json(locations);
+  } catch (err) {
+    next(err);
+  }
+});
+
 //get zip code
 router.get("/:zip", async (req, res, next) => {
   try {
@@ -69,3 +79,5 @@ router.get("/:zip", async (req, res, next) => {
     next(err);
   }
 });
+
+

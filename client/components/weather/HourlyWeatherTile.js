@@ -4,7 +4,6 @@ import timeParser from "./handlers/timeHandler";
 import ForecastHandler from "./handlers/forecastHandlers";
 
 const HourlyWeatherTile = (props) => {
-  console.log(props)
   let stateCode = props.location.state;
   let time = props.data.startTime;
   let adjustedTime = timeParser(time,stateCode)

@@ -1,31 +1,47 @@
-import React from 'react'
-// import bg1 from '../../public/images/forest-931706.jpg'
-// import bg2 from '../../public/images/forest-3394066.jpg'
-// import bg3 from '../../public/images/forest-3622519.jpg'
-// import bg4 from '../../public/images/hills-615429_1920.jpg'
-// import bg5 from '../../public/images/lightning-2287319_1920.jpg'
-// import bg6 from '../../public/images/sky-690293_1920.jpg'
-// import bg7 from '../../public/images/sky-690293.jpg'
-// import bg8 from '../../public/images/tree-736875.jpg'
-// import bg9 from '../../public/images/tree-736885.jpg'
+import React from "react";
+import SearchBox from "./components/search/SearchBox";
+import { connect } from "react-redux";
+import { fetchRandomThunk, setLocation } from "./store/location";
 
-// let bg = [bg1,bg2,bg3,bg4,bg5,bg6,bg7,bg8,bg9]
+class Homepage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.random = this.random.bind(this);
+  }
 
+  random() {
+    (this.props.randomLocation());
+  }
 
-// const getRandomBGPath = () => {
-//   return bg[Math.floor(Math.random() * bg.length)]
-// }
+  componentDidUpdate(previousProps) {
+    if (previousProps.location !== this.props.location) {
+      const location = this.props.location;
+      this.props.setLocation(location);
+      this.props.history.push("/weather", { data: location });
+    }
+  }
 
-
-const Homepage = (props) => {
-
-  return(
-    <section>
-
-      <h1>h1</h1>
-
-    </section>
-  )
+  render() {
+    return (
+      <section className="home-page">
+        <SearchBox size="large"></SearchBox>
+        <button onClick={() => this.random()}>Random</button>
+        <p>Keep your face to the sun and you will never see the shadows</p>
+      </section>
+    );
+  }
 }
 
-export default Homepage
+const mapStateToProps = (state) => {
+  return {
+    location: state.locationReducer.location,
+  };
+};
+const mapDispatch = (dispatch) => {
+  return {
+    randomLocation: () => dispatch(fetchRandomThunk()),
+    setLocation: (query) => dispatch(setLocation(query)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatch)(Homepage);

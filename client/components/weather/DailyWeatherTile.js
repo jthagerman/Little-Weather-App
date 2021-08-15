@@ -9,7 +9,7 @@ const DailyWeatherModule = (props) => {
       <h2>
         <ForecastHandler size={60} weather={props.data.forecast} />
       </h2>
-      <h2>{props.data.high}</h2>
+      <h2>{props.data.high}</h2> <span class="invisble-when-big"> / </span>
       <h2>{props.data.low}</h2>
     </div>
   );
