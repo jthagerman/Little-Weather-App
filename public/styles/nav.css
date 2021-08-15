@@ -100,12 +100,7 @@ select:focus {
   visibility: visible;
 }
 
-@media (min-width: 820px) {
-  .search-input {
-    min-width: 200px;
-    margin-right: 10px;
-  }
-}
+
 
 @media (min-width: 680px) {
   .hamburger {
@@ -116,5 +111,11 @@ select:focus {
     display: unset;
   }
 
+}
 
+@media (min-width: 820px) {
+  .search-input {
+    min-width: 200px;
+    margin-right: 10px;
+  }
 }
