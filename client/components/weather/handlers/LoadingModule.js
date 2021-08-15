@@ -10,10 +10,19 @@ const override = css`
 `;
 
 const LoadingModule = () => {
-  return(
+  return (
     <span>
-      <h1 style={{ fontSize: "50px", textAlign: "center" }}>Loading</h1>{" "}
-      <ClipLoader color="ffffff" loading="ffffff" css={override} size={200} />
+      <h1
+        style={{
+          fontSize: "50px",
+          textAlign: "center",
+          marginBottom: "100px",
+          marginTop: "50px",
+        }}
+      >
+        Loading
+      </h1>{" "}
+      <ClipLoader color="ffffff" loading="ffffff" css={override} size={180} />
     </span>
   );
 };

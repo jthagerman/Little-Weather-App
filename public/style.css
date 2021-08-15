@@ -66,3 +66,9 @@ footer p:hover{
   } */
 }
 
+html {
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll;
+
+
+}

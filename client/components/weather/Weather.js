@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getCurrentWeatherThunk } from "../../store/weather";
+import { setLocation } from "../../store/location";
 import { Link } from "react-router-dom";
 import CurrentWeather from "./CurrentWeather";
 import DailyModule from "./DailyModule";
@@ -9,7 +10,7 @@ import LoadingModule from "./handlers/LoadingModule";
 import ErrorLoadingPage from "./handlers/ErrorLoadingPage";
 import Chart from "./Chart";
 import RainDonut from "./RainDonut";
-import BarChart from "./barChart";
+import BarChart from "./BarChart";
 
 class Weather extends React.Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class Weather extends React.Component {
     try {
       if (this.props.history.location.state.data) {
         let location = this.props.location.state.data;
+        this.props.setLocation(this.props.history.location.state.data)
         this.props.getWeather(location.lat, location.lng);
         this.setState({ loading: true });
       }
@@ -162,6 +164,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     getWeather: (lat, lon) => dispatch(getCurrentWeatherThunk(lat, lon)),
+    setLocation: (location) => dispatch(setLocation(location))
   };
 };
 

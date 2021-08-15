@@ -1,11 +1,8 @@
-
-
-.big-temp-text{
+.big-temp-text {
   color: white;
   font-size: 200px;
   margin: 0px;
   font-weight: normal;
-
 }
 
 .weather-data {
@@ -14,15 +11,14 @@
   align-content: center;
   flex-direction: column;
   margin: auto;
-  text-align:center;
-  text-shadow:1px 1px 1px rgb(36, 36, 36), 1px 1px 1px rgb(34, 34, 34);
+  text-align: center;
+  text-shadow: 1px 1px 1px rgb(36, 36, 36), 1px 1px 1px rgb(34, 34, 34);
   margin-top: 40px;
-
 }
 
 .weather-data svg {
   display: block;
-  margin: auto
+  margin: auto;
 }
 
 .hero {
@@ -30,56 +26,45 @@
   flex-direction: column;
   align-items: center;
 
-
   height: 668px;
 }
 
 .toggle {
-
   padding: 10px;
   border: 0px;
   width: 200px;
   height: 90px;
-  background-color: rgba(21, 14, 29, .5) ;
+  background-color: rgba(21, 14, 29, 0.5);
   color: white;
   font-size: 18px;
-
-
 }
-.toggle:hover{
-  background-color: rgba(21, 14, 29, .7) ;
+.toggle:hover {
+  background-color: rgba(21, 14, 29, 0.7);
   transition: 0.25s;
-
 }
 
-.toggle:first-child{
-border-top-left-radius:25px;
-/* border-top-right-radius
+.toggle:first-child {
+  border-top-left-radius: 25px;
+  /* border-top-right-radius
 border-bottom-right-radius */
-border-bottom-left-radius:25px;
+  border-bottom-left-radius: 25px;
 }
 
-.toggle:last-child{
-
+.toggle:last-child {
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
-
-  }
+}
 
 #toggle-holder {
   display: block;
   margin: auto;
-  max-width: 400px
-
+  max-width: 400px;
 }
-
 
 .current-conditions {
   font-size: 24px;
   font-weight: bolder;
-
 }
-
 
 .location-headline {
   font-size: 26px;
@@ -89,5 +74,33 @@ border-bottom-left-radius:25px;
   margin: auto;
 
   display: block;
-  text-shadow:1px 1px 2px rgb(36, 36, 36), 1px 1px 2px rgb(34, 34, 34);
+  text-shadow: 1px 1px 2px rgb(36, 36, 36), 1px 1px 2px rgb(34, 34, 34);
+}
+
+.weather-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+
+}
+.weather-error p {
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+.weather-error button {
+  background-color: rgb(50, 159, 153);
+  border: 0px;
+  color: white;
+  width: 150px;
+  border-radius: 999px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: bolder;
+
+
+}
+.weather-error button:hover {
+  background-color: rgb(29, 91, 87);
 }
