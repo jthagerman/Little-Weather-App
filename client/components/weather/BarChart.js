@@ -69,14 +69,14 @@ const BarChart = (props) => {
       {
         type: "bar",
         label: "Highs",
-        backgroundColor: "rgb(255, 99, 132)",
+        backgroundColor: "rgb(247, 78, 114)",
         minBarLength: 2,
         data: highs,
       },
       {
         type: "bar",
         label: "Lows",
-        backgroundColor: "rgb(75, 192, 192)",
+        backgroundColor: "rgb(50, 159, 153)",
         minBarLength: 2,
         data: lows,
       },

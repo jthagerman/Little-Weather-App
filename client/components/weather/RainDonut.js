@@ -20,12 +20,12 @@ const RainDonut = React.memo((props) => {
         data: array,
         backgroundColor: [
           "rgba(50, 159, 153, 0.8)",
-          "rgb(255, 99, 132,0.8)",
+          "rgb(247, 78, 114,0.8)",
           "rgba(80, 34, 170, 0.8)",
         ],
         borderColor: [
           "rgba(50, 159, 153, 1)",
-          "rgba(255, 99, 132,1)",
+          "rgba(247, 78, 114,1)",
           "rgba(80, 34, 170, 1)",
         ],
         borderWidth: 1,

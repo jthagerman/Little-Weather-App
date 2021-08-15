@@ -38,15 +38,15 @@ const Navbar = ({ handleClick, isLoggedIn }) => (
     ) : (
       <section className="nav-bar">
         <div className="nav-left">
-          <span className="nav-logo" style={{ visibility: "visible" }}>
-            WeatherThing
-          </span>
-          <a href="#" className="nav-link hidden-when-small">
+          <Link to="/"><span className="nav-logo" style={{ visibility: "visible" }}>
+            Little<span className="purple">Weather</span><span className="light-green">App</span>
+          </span></Link>
+          {/* <a href="#" className="nav-link hidden-when-small">
             Hourly
           </a>
           <a href="# " className="nav-link hidden-when-small">
             10-Day
-          </a>
+          </a> */}
         </div>
 
         <div className="nav-right hidden-when-small">

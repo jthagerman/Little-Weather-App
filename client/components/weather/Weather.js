@@ -145,7 +145,7 @@ class Weather extends React.Component {
                   </section>
                   <div id="space"></div>
 
-                  {/* <Hourly weather={this.props.weather} stateName={this.props.weather.location} /> */}
+                  <Hourly weather={this.props.weather} stateName={this.props.weather.location} />
                 </>
               )}
             </div>

@@ -109,11 +109,15 @@ select:focus {
     display: unset;
   }
   .nav-logo {
-    font-size: 18px;
+    font-size: 25px;
+    font-weight: bold;
   }
 
-  /* .nav-bar{
-    color: purple;
-    background-color: palegreen;
-  } */
+
+  .light-green {
+    color:  rgb(50, 159, 153);
+    font-weight: bolder;
+  }
+
+
 }

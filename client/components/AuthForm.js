@@ -1,44 +1,79 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { authenticate } from "../store";
+import { Link } from "react-router-dom";
 
 /**
  * COMPONENT
  */
-const AuthForm = (props) => {
+const AuthFormLogin = (props) => {
   const { name, displayName, handleSubmit, error } = props;
-
   return (
-    <div>
-      <form onSubmit={handleSubmit} name={name}>
-        <div>
-          <label htmlFor="username">
-            <small>Username</small>
-          </label>
-          <input name="username" type="text" />
-        </div>
-        <div>
-          <label htmlFor="password">
-            <small>Password</small>
-          </label>
-          <input name="password" type="password" />
-        </div>
-        <div>
-          <button type="submit">{displayName}</button>
-        </div>
-        {error && error.response && <div> {error.response.data} </div>}
-      </form>
-    </div>
+    <section className="auth">
+      <div className="auth-holder">
+        <h1>Login To Your Account</h1>
+        <form onSubmit={handleSubmit} name={name}>
+          <div>
+            <label htmlFor="username">
+              <h2>Username</h2>
+            </label>
+            <input name="username" type="text" required />
+          </div>
+          <div>
+            <label htmlFor="password">
+              <h2>Passsword</h2>
+            </label>
+            <input name="password" type="password" required />
+          </div>
+          <div>
+            <button type="submit">{displayName}</button>
+          </div>
+          <div>
+            <Link to="/signup">
+              <p>Don't Have An Account? Click Here To Sign Up</p>
+            </Link>
+          </div>
+          {error && error.response && (
+            <div id="auth-error"> {error.response.data} </div>
+          )}
+        </form>
+      </div>
+    </section>
   );
 };
 
-/**
- * CONTAINER
- *   Note that we have two different sets of 'mapStateToProps' functions -
- *   one for Login, and one for Signup. However, they share the same 'mapDispatchToProps'
- *   function, and share the same Component. This is a good example of how we
- *   can stay DRY with interfaces that are very similar to each other!
- */
+const AuthFormSignUp = (props) => {
+  const { name, displayName, handleSubmit } = props;
+
+  return (
+    <section className="auth">
+      <div className="auth-holder">
+        <h1>
+          Make A Weather<span className="light-green">App</span> Account
+        </h1>
+        <form onSubmit={handleSubmit} name={name}>
+          <div>
+            <label htmlFor="username">
+              <h2>Username</h2>
+            </label>
+            <input name="username" type="text" required />
+          </div>
+          <div>
+            <label htmlFor="password">
+              <h2>Password</h2>
+            </label>
+            <input name="password" type="password" required />
+          </div>
+          <div>
+            <button type="submit">{displayName}</button>
+          </div>
+          {/* {error && error.response && <div> {error.response.data} </div>} */}
+        </form>
+      </div>
+    </section>
+  );
+};
+
 const mapLogin = (state) => {
   return {
     name: "login",
@@ -67,5 +102,5 @@ const mapDispatch = (dispatch) => {
   };
 };
 
-export const Login = connect(mapLogin, mapDispatch)(AuthForm);
-export const Signup = connect(mapSignup, mapDispatch)(AuthForm);
+export const Login = connect(mapLogin, mapDispatch)(AuthFormLogin);
+export const Signup = connect(mapSignup, mapDispatch)(AuthFormSignUp);
