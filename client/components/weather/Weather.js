@@ -230,10 +230,10 @@ class Weather extends React.Component {
                   </section>
                   <div id="space"></div>
 
-                  <Hourly
+                  {/* <Hourly
                     weather={this.props.weather}
                     stateName={this.props.weather.location}
-                  />
+                  /> */}
                 </>
               )}
               <ToastContainer />

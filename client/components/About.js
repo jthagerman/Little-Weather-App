@@ -1,16 +1,30 @@
-import React from 'react'
+import React from "react";
 import Particles from "react-tsparticles";
-
 
 const About = () => {
   return (
     <section className="about-page">
-      <Particley className="particles-holder"/>
-      <h1>John Hagerman</h1>
-    </section>
+      <Particley className="particles-holder" />
+      <section className="about-holder">
+        <h1>John T. Hagerman</h1>
+        <h4>Created August 2021</h4>
+        <div>
+        <p>
+          This Simple website was made part of a four day stackathon assignment
+          as part of the curriculum at Full Stack Academy of Code. Weather data
+          is pulled from the National Weather Service free API.{"  "}
+          <a href="https://github.com/jthagerman/Little-Weather-App/blob/main/README.md">
+            CLICK HERE
+          </a>{" "} to see the readme in the Github repo to read about lessons and limitations learned when making
+          this project
+        </p>
 
-  )
-}
+        </div>
+
+      </section>
+    </section>
+  );
+};
 class Particley extends React.Component {
   constructor(props) {
     super(props);
@@ -37,7 +51,6 @@ class Particley extends React.Component {
         loaded={this.particlesLoaded}
         height={800}
         options={{
-
           fpsLimit: 60,
           interactivity: {
             detectsOn: "canvas",
@@ -65,7 +78,7 @@ class Particley extends React.Component {
               repulse: {
                 distance: 200,
                 duration: 0.4,
-                speed: 1
+                speed: 1,
               },
             },
           },
@@ -116,4 +129,4 @@ class Particley extends React.Component {
   }
 }
 
-export default About
+export default About;

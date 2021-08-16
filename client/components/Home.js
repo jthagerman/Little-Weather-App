@@ -25,7 +25,7 @@ class Home extends React.Component {
             Welcome Back, {this.props.username[0].toUpperCase()}
             {this.props.username.slice(1)}
           </h1>
-          <p>It's a Beautiful Day!</p>
+          <p className="tagline">It's a Beautiful Day!</p>
         </div>
         <div className="favorites-holder">
           {favs.length >= 1 ? (

@@ -98,6 +98,10 @@
   margin-top: 50px;
 }
 
+.home-page p {
+  font-size: 22px;
+}
+
 .favorite-tile {
   display: block;
   text-align: center;
@@ -106,6 +110,7 @@
   background-color:  rgb(50, 159, 153);
   margin: 15px;
   border-radius: 25px;
+  /* border: 6px solid white */
 }
 .favorite-tile:hover{
   background-color:#5022aa;
@@ -125,6 +130,11 @@
   text-align: center;
   font-size: 60px;
 
+}
+
+.tagline {
+  font-weight: 900;
+  font-size: 28px;
 }
 
 @media (min-width: 680px) {
