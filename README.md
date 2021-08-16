@@ -1,6 +1,6 @@
 # Little Weather App [Link to Heroku Deployment](http://little-weather-app.herokuapp.com/)
 
-![alt text](https://github.com/jthagerman/Little-Weather-App/blob/main/public/screenshots/Screen%20Shot%202021-08-15%20at%2010.47.23%20PM.png)
+![Website](https://github.com/jthagerman/Little-Weather-App/blob/main/public/screenshots/Screen%20Shot%202021-08-15%20at%2010.47.23%20PM.png)
 
 ## The Premise
 
@@ -15,21 +15,11 @@ This application was created during four days as my personal project as part of 
 
 ## How I build It
 
-Now that you've got the code, follow these steps to get acclimated:
+So to get the weather data I used the free API from the National Weather service.  Using this is was probably the biggest bottleneck of the project.  The NWS api albeit easy to use, is rather unreliable, timing out constantly and doesn't actually provide much weather data.  It also uses Latitude and Longitude values as input, so I build by own databse of zipcodes and city names, that is queried so that my website can send in a request to the NWS. But its not that simple as the NWS also requires a 3 digit weather station code along with the Lat and Lng values, so you have to have call them to get those to in turn call them againto get the weather data.
 
-* Update project name and description in `package.json`
-* `npm install`
-* Create two postgres databases (`MY_APP_NAME` should match the `name`
-  parameter in `package.json`):
-* These commands will create both your **development** and **test** databases
+![Website](https://github.com/jthagerman/Little-Weather-App/blob/main/public/screenshots/Screen%20Shot%202021-08-15%20at%2010.49.36%20PM.png)
 
-```
-createdb <YOUR APP NAME HERE FROM package.json>
-createdb <YOUR APP NAME HERE FROM package.json>-test
-```
-
-* By default, running `npm test` will use your test database, while
-  regular development uses development database
+### I used chart.js along side the weather data to create a few different types of charts to show the weather data.
 
 ## Start
 
