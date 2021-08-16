@@ -62,10 +62,9 @@ footer p:hover {
 .about-holder h1 {
   font-size: 70px;
   font-weight: 700;
-
 }
 
-.about-holder h4{
+.about-holder h4 {
   font-size: 22px;
 }
 
@@ -83,22 +82,21 @@ footer p:hover {
   max-width: 600px;
 }
 .about-holder div {
-  background-color: rgba(1,1,1,.5);
+  background-color: rgba(1, 1, 1, 0.5);
   border-radius: 25px;
   padding: 5px;
   font-weight: normal;
   letter-spacing: 2px;
   line-height: 1.5;
 }
-.about-holder div:hover{
-  background-color: rgba(1,1,1,.65);
-
+.about-holder div:hover {
+  background-color: rgba(1, 1, 1, 0.65);
 }
 .about-holder a {
   font-weight: bolder;
 }
 
-.about-holder a:hover{
+.about-holder a:hover {
   text-decoration: underline;
 }
 

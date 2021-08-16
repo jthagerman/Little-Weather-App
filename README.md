@@ -1,6 +1,6 @@
 # Little Weather App [Link to Heroku Deployment](http://little-weather-app.herokuapp.com/)
 
-![Website](https://github.com/jthagerman/Little-Weather-App/blob/main/public/screenshots/Screen%20Shot%202021-08-15%20at%2010.47.23%20PM.png)
+![Main](https://github.com/jthagerman/Little-Weather-App/blob/main/public/screenshots/Screen%20Shot%202021-08-15%20at%2010.47.23%20PM.png)
 
 ## The Premise
 
