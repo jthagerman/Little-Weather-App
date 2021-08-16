@@ -1,8 +1,10 @@
-# Stackathon Little Weather App
+# Little Weather App
 
-## Setup
+![alt text](https://github.com/jthagerman/Little-Weather-App/blob/main/public/screenshots/Screen%20Shot%202021-08-15%20at%2010.47.23%20PM.png)
 
-To use this as boilerplate, you'll need to take the following steps:
+## The Premise
+
+This application was created during four days as part of the Fullstack academy of code
 
 * Don't fork or clone this repo! Instead, create a new, empty
   directory on your machine and `git init` (or create an empty repo on
@@ -17,7 +19,7 @@ git merge boilermaker/main
 git branch -m master main
 ```
 
-## Customize
+## How I build It
 
 Now that you've got the code, follow these steps to get acclimated:
 
@@ -75,3 +77,33 @@ Database Setup
 
 
 Now, you should be deployed!
+
+
+
+
+Improvements that should be done,
+Further work on main weather react component could be broken down
+Saving weather station codes to reduce calls to NWS servers
+security, no route security
+build an account settings page
+
+
+
+Features:
+
+search suggestions
+
+favorite weather tabs
+favorite magements
+radar
+
+
+If better api, radar, more data
+
+
+
+
+Credits
+US Zip Code data is from the free file https://simplemaps.com/data/us-zips
+Background Images were freely sourced from https://pixabay.com/
+
