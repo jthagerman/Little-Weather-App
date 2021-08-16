@@ -1,23 +1,17 @@
-# Little Weather App
+# Little Weather App [Link to Heroku Deployment](http://little-weather-app.herokuapp.com/)
 
 ![alt text](https://github.com/jthagerman/Little-Weather-App/blob/main/public/screenshots/Screen%20Shot%202021-08-15%20at%2010.47.23%20PM.png)
 
 ## The Premise
 
-This application was created during four days as part of the Fullstack academy of code
+This application was created during four days as my personal project as part of the curriculum of Fullstack Academy of Code.  This was an open ended assignment where I could build anything I wanted, with an emphasis put on one should try to implement a new technology. So my approach was:
 
-* Don't fork or clone this repo! Instead, create a new, empty
-  directory on your machine and `git init` (or create an empty repo on
-  Github and clone it to your local machine)
+* I wanted to make a clean, visually pleasing website, styled from scratch.
 
-* Now you will have to add the fs-app-template as a remote and merge it into your own repository.
+* Make a site that make calls to an external API.
 
-```
-git remote add boilermaker https://github.com/FullstackAcademy/fs-app-template.git
-git fetch boilermaker
-git merge boilermaker/main
-git branch -m master main
-```
+* Experiment with a few node libraries, mainly I used chart.js.
+
 
 ## How I build It
 
