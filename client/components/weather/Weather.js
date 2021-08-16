@@ -33,17 +33,12 @@ class Weather extends React.Component {
     try {
       if (this.props.history.location.state.data) {
         let location = this.props.location.state.data;
-        console.log(
-          "i need",
-          location.lat,
-          location.lng,
-          this.props.history.location.state.data
-        );
+
         this.props.setLocation(this.props.history.location.state.data);
         this.props.getWeather(location.lat, location.lng);
         this.setState({ loading: true });
       }
-      if (this.props.favorites) {
+      if (this.props.favorites && this.props.theLocation) {
         let currentCity = this.props.theLocation.zip;
         let favoritesList = this.props.favorites;
         favoritesList.forEach((element) => {
@@ -59,8 +54,6 @@ class Weather extends React.Component {
   }
 
   componentDidUpdate(previousProps) {
-  console.log("i am updating")
-    console.log(previousProps.favorites, this.props.favorites);
     if (previousProps.weather) {
       if (previousProps.weather.forecast !== this.props.weather.forecast) {
         this.setState({ loading: false });
@@ -79,6 +72,13 @@ class Weather extends React.Component {
       });
     }
 
+    if(previousProps.theLocation !== this.props.theLocation) {
+      const currentZip = this.props.theLocation.zip
+      this.props.favorites.forEach((element) => {
+        if(element.zip === currentZip) this.setState({favorited: true})
+      })
+
+    }
   }
   removeFavorites() {
     toast.dark(
@@ -93,7 +93,6 @@ class Weather extends React.Component {
         progress: undefined,
       }
     );
-    console.log(this.props.theLocation.zip, this.props.auth.id);
     this.props.deleteFavorite(this.props.theLocation.zip, this.props.auth.id);
     this.setState({ favorited: false });
   }

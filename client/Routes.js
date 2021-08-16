@@ -9,9 +9,7 @@ import Weather from "./components/weather/Weather.js";
 import Homepage from "./Homepage";
 import About from "./components/About";
 
-/**
- * COMPONENT
- */
+
 class Routes extends Component {
   componentDidMount() {
     this.props.loadInitialData();
@@ -28,7 +26,7 @@ class Routes extends Component {
             <Route path="/home" component={Home} />
             <Route path="/search/:query" component={Search} />
             <Route exact path="/weather" component={Weather} />
-            <Route path="/about" component={About}/>
+            <Route path="/about" component={About} />
             <Redirect to="/home" />
           </Switch>
         ) : (
@@ -38,7 +36,7 @@ class Routes extends Component {
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route exact path="/weather" component={Weather} />
-            <Route path="/about" component={About}/>
+            <Route path="/about" component={About} />
             <Route component={Homepage} />
           </Switch>
         )}
@@ -47,13 +45,9 @@ class Routes extends Component {
   }
 }
 
-/**
- * CONTAINER
- */
+
 const mapState = (state) => {
   return {
-    // Being 'logged in' for our purposes will be defined has having a state.auth that has a truthy id.
-    // Otherwise, state.auth will be an empty object, and state.auth.id will be falsey
     isLoggedIn: !!state.auth.id,
   };
 };
@@ -66,6 +60,4 @@ const mapDispatch = (dispatch) => {
   };
 };
 
-// The `withRouter` wrapper makes sure that updates are not blocked
-// when the url changes
 export default withRouter(connect(mapState, mapDispatch)(Routes));

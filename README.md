@@ -42,6 +42,8 @@ All the styling was done by myself for the site, and for the first time I used m
 
 * If keeping with the NWS server logging station codes so that next time a location is searched less API calls are needed.
 
+* A proper parser needs to be written to turn weather statements into symbols, this brute for method used is poor.
+
 ![Website](https://github.com/jthagerman/Little-Weather-App/blob/main/public/screenshots/Screen%20Shot%202021-08-15%20at%2010.52.29%20PM.png)
 
 
@@ -55,6 +57,8 @@ All the styling was done by myself for the site, and for the first time I used m
 
 
 ### Credits
-US Zip Code data is from the free file https://simplemaps.com/data/us-zips
-Background Images were freely sourced from https://pixabay.com/
+
+* US Zip Code data is from the free file https://simplemaps.com/data/us-zips
+
+* Background Images were freely sourced from https://pixabay.com/
 

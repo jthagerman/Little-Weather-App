@@ -35,9 +35,8 @@ const RainDonut = React.memo((props) => {
 
   return (
     <>
-
       <div id="donut-box">
-      <h1 className="donut-title">{props.title}</h1>
+        <h1 className="donut-title">{props.title}</h1>
         <Doughnut data={data} width={500} height={500} />
       </div>
     </>

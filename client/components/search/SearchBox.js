@@ -2,7 +2,6 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import MagGlass from "../icons/MagGlass";
 
-
 const SearchBox = (props) => {
   let history = useHistory();
 
@@ -13,24 +12,29 @@ const SearchBox = (props) => {
     }
   };
 
-  if(props.size === "large"){
+  if (props.size === "large") {
     return (
       <span>
-        <input className="search-input-large" type="text" onKeyDown={handleKeyDown} placeholder={`Search zip code or city`} />
+        <input
+          className="search-input-large"
+          type="text"
+          onKeyDown={handleKeyDown}
+          placeholder={`Search zip code or city`}
+        />
       </span>
     );
-
-  }else{
+  } else {
     return (
       <span>
-        <input className="search-input hidden-when-small" type="text" onKeyDown={handleKeyDown} placeholder="Search zip code or city" />
+        <input
+          className="search-input hidden-when-small"
+          type="text"
+          onKeyDown={handleKeyDown}
+          placeholder="Search zip code or city"
+        />
       </span>
     );
-
   }
-
 };
 
 export default SearchBox;
-
-

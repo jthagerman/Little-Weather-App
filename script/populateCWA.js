@@ -33,10 +33,6 @@
 // );
 // })();
 
-
-
-
-
 // //console.log(p)
 //   // locations.forEach(element => {
 //   //   let lat = element.lat

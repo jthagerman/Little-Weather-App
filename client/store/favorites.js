@@ -104,7 +104,7 @@ export default function favoritesReducer(state = initialState, action) {
       let listState = list.slice(0, lindex);
       let listEnd = list.slice(lindex + 1);
 
-      return { ...state, favorites: [...listState, ...listEnd ]};
+      return { ...state, favorites: [...listState, ...listEnd] };
     case ADD_FAVORITE:
       let updateFavorites = state.favorites;
       updateFavorites.push(action.data);

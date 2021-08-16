@@ -3,20 +3,18 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-/**
- * COMPONENT
- */
 class Home extends React.Component {
   constructor(props) {
     super(props);
   }
+
   componentDidUpdate(previousProps) {
-    console.log("updating");
+    console.log("updating home");
   }
 
   render() {
     let favs = this.props.favorites || [];
-    if(favs.length > 10) favs = favs.slice(0,10)
+    if (favs.length > 10) favs = favs.slice(0, 10);
 
     return (
       <section className="personal-home">
@@ -35,12 +33,9 @@ class Home extends React.Component {
                   <div className="favorite-tile" key={index}>
                     <Link
                       to={{ pathname: "/weather", state: { data: element } }}
-
                     >
-
-                <h1>{element.temp}&#176;</h1>
-                        <p>{element.city}</p> <p>{element.state_name}</p>
-
+                      <h1>{element.temp}&#176;</h1>
+                      <p>{element.city}</p> <p>{element.state_name}</p>
                     </Link>
                   </div>
                 );

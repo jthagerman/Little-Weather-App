@@ -28,7 +28,11 @@ const BarChart = (props) => {
       shouldPop = true;
     }
     data.forEach((element) => {
-      if ((!element.name.includes("Overnight")) &&(!element.name.includes("Night")) && ( !element.name.includes('Tonight'))){
+      if (
+        !element.name.includes("Overnight") &&
+        !element.name.includes("Night") &&
+        !element.name.includes("Tonight")
+      ) {
         highs.push(element.temperature);
         days.push(element.name);
       } else {

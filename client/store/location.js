@@ -23,8 +23,7 @@ export const searchLocation = (searchResults) => {
 export const fetchRandomThunk = () => {
   return async (dispatch) => {
     try {
-      const location = await axios.get("/api/locations/random"
-      );
+      const location = await axios.get("/api/locations/random");
       const locationData = location.data;
       dispatch(setLocation(locationData));
     } catch (error) {

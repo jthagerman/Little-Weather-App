@@ -8,11 +8,10 @@ import {
   CloudHaze,
   CloudRainHeavy,
   CloudRain,
-  CloudFog
+  CloudFog,
 } from "react-bootstrap-icons";
 
-import React from 'react'
-
+import React from "react";
 
 //NEEDS TO BE REFACTORED
 const ForecastHandler = (props) => {
@@ -76,31 +75,30 @@ const ForecastHandler = (props) => {
       return <CloudRain size={size} />;
     case "Isolated Rain Showers":
       return <Cloudy size={size} />;
-    case 'Chance Showers And Thunderstorms then Showers And Thunderstorms Likely':
+    case "Chance Showers And Thunderstorms then Showers And Thunderstorms Likely":
       return <CloudLightningRain size={size}></CloudLightningRain>;
-      case'Chance Rain Showers then Chance Showers And Thunderstorms':
+    case "Chance Rain Showers then Chance Showers And Thunderstorms":
       return <CloudRain size={size} />;
-      case'Chance Rain Showers then Slight Chance Showers And Thunderstorms':
+    case "Chance Rain Showers then Slight Chance Showers And Thunderstorms":
       return <CloudRain size={size} />;
-     case 'Partly Sunny':
+    case "Partly Sunny":
       return <CloudSun size={size} />;
-      case'Chance Showers And Thunderstorms then Mostly Sunny':
+    case "Chance Showers And Thunderstorms then Mostly Sunny":
       return <CloudLightningRain size={size}></CloudLightningRain>;
-      case'Slight Chance Rain Showers then Slight Chance Showers And Thunderstorms':
+    case "Slight Chance Rain Showers then Slight Chance Showers And Thunderstorms":
       return <Cloudy size={size} />;
-      case'Partly Sunny then Slight Chance Rain Showers':
+    case "Partly Sunny then Slight Chance Rain Showers":
       return <CloudSun size={size} />;
-      case'Chance Rain Showers then Mostly Sunny':
+    case "Chance Rain Showers then Mostly Sunny":
       return <CloudRain size={size} />;
-      case'Mostly Cloudy then Chance Showers And Thunderstorms':
+    case "Mostly Cloudy then Chance Showers And Thunderstorms":
       return <Cloudy size={size} />;
-      case'Showers And Thunderstorms':
+    case "Showers And Thunderstorms":
       return <CloudLightningRain size={size}></CloudLightningRain>;
-      case'Rain Showers Likely':
+    case "Rain Showers Likely":
       return <CloudRain size={size} />;
-      case'Patchy Fog then Chance Showers And Thunderstorms':
+    case "Patchy Fog then Chance Showers And Thunderstorms":
       return <CloudFog size={size} />;
-
 
     default:
       console.log("weather condition output not found", weather);
@@ -108,8 +106,7 @@ const ForecastHandler = (props) => {
   }
 };
 
-
-export default ForecastHandler
+export default ForecastHandler;
 /*
 
 

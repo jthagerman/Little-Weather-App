@@ -10,7 +10,7 @@ class Homepage extends React.Component {
   }
 
   random() {
-    (this.props.randomLocation());
+    this.props.randomLocation();
   }
 
   componentDidUpdate(previousProps) {

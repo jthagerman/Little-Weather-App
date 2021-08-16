@@ -19,8 +19,8 @@
 }
 
 .search-result:hover {
-  background-color: rgba(15, 12, 21, 1);
-  border: 0.1px solid rgba(15, 12, 21, 1);
+  background-color: rgb(40, 24, 72);
+  border: 0.1px solid rgba(40, 24, 72, 1);
 }
 
 .search-result h1 {
