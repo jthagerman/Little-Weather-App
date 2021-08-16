@@ -150,7 +150,7 @@ class Weather extends React.Component {
                   </div>
 
                   <section className="hero">
-                    {this.props.auth === "" ? (
+                    {Object.keys(this.props.auth).length === 0 ? (
                       <span></span>
                     ) : (
                       <span>
