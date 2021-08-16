@@ -17,77 +17,44 @@ This application was created during four days as my personal project as part of 
 
 So to get the weather data I used the free API from the National Weather service.  Using this is was probably the biggest bottleneck of the project.  The NWS api albeit easy to use, is rather unreliable, timing out constantly and doesn't actually provide much weather data.  It also uses Latitude and Longitude values as input, so I build by own databse of zipcodes and city names, that is queried so that my website can send in a request to the NWS. But its not that simple as the NWS also requires a 3 digit weather station code along with the Lat and Lng values, so you have to have call them to get those to in turn call them againto get the weather data.
 
-![Website](https://github.com/jthagerman/Little-Weather-App/blob/main/public/screenshots/Screen%20Shot%202021-08-15%20at%2010.49.36%20PM.png)
+![Website](https://github.com/jthagerman/Little-Weather-App/blob/main/public/screenshots/Screen%20Shot%202021-08-15%20at%2010.48.15%20PM.png)
 
 ### I used chart.js along side the weather data to create a few different types of charts to show the weather data.
 
-## Start
+## Mobile
 
-Sync and seed your database by running `npm run seed`. Running `npm run start:dev` will make great things happen!
+All the styling was done by myself for the site, and for the first time I used media queries on my css rules taking in consideration on how the site would look on a small screen, it is far from perfect and some things are not yet finished but it was a learning experience for me and was a lot easier than I thought it would be, and was enjoyable to implement.
 
 - start:dev will both start your server and build your client side files using webpack
 - start:dev:logger is the same as start:dev, but you will see your SQL queries (can be helpful for debugging)
 - start:dev:seed will start your server and also seed your database (this is useful when you are making schema changes and you don't want to run your seed script separately)
 
 
-### Heroku
+![website](https://github.com/jthagerman/Little-Weather-App/blob/main/public/screenshots/Screen%20Shot%202021-08-15%20at%2010.48.29%20PM.png)
 
-1.  Set up the [Heroku command line tools][heroku-cli]
-2.  `heroku login`
-3.  Add a git remote for heroku:
+## So what would I had done differently?
 
-[heroku-cli]: https://devcenter.heroku.com/articles/heroku-cli
+* Used a different more reliable/faster API to get weather data from.  It would be way less complicated but as this is a small educational assigment and not production it was not necessary.
 
-* **If you are creating a new app...**
+* Some of the components could be compartamentalized better, especially the main weather view component.  In some instances where I passed down props, that could of probably been done with the redux store.
 
-  1.  `heroku create` or `heroku create your-app-name` if you have a
-      name in mind.
-  2.  `heroku config:set JWT=<your secret here!>` to set a secret for JWT signing
+* Implementing security features
 
-Database Setup
+* If keeping with the NWS server logging station codes so that next time a location is searched less API calls are needed.
 
-  3.  `heroku addons:create heroku-postgresql:hobby-dev` to add
-      ("provision") a postgres database to your heroku dyno (This creates your production database)
-
-  4.  `heroku config:set SEED=true` to get heroku to sync and seed your database
-
-  5.   note everytime your app restarts, the database tables will be dropped and re-created. To avoid this you can `config:unset SEED`
+![Website](https://github.com/jthagerman/Little-Weather-App/blob/main/public/screenshots/Screen%20Shot%202021-08-15%20at%2010.52.29%20PM.png)
 
 
-* **If you already have a Heroku app...**
+## Stretch Features
 
-  1.  `heroku git:remote your-app-name` You'll need to be a
-      collaborator on the app.
+* More account features, an actuall account page
 
+* Tabs on the navbar of logged in users favorited locations
 
-Now, you should be deployed!
-
-
+* More styling work
 
 
-Improvements that should be done,
-Further work on main weather react component could be broken down
-Saving weather station codes to reduce calls to NWS servers
-security, no route security
-build an account settings page
-
-
-
-Features:
-
-search suggestions
-
-favorite weather tabs
-favorite magements
-radar
-
-
-If better api, radar, more data
-
-
-
-
-Credits
+### Credits
 US Zip Code data is from the free file https://simplemaps.com/data/us-zips
 Background Images were freely sourced from https://pixabay.com/
 
