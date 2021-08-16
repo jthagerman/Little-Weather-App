@@ -1,6 +1,8 @@
 import axios from 'axios'
 import history from '../history'
 
+import { setAllFavoritesThunk} from './favorites'
+
 const TOKEN = 'token'
 
 /**
@@ -24,6 +26,7 @@ export const me = () => async dispatch => {
         authorization: token
       }
     })
+    dispatch(setAllFavoritesThunk(res.data.id))
     return dispatch(setAuth(res.data))
   }
 }

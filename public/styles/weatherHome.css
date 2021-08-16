@@ -25,6 +25,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 
   height: 668px;
 }
@@ -86,6 +87,7 @@ border-bottom-right-radius */
 .weather-error p {
   font-size: 50px;
   font-weight: bolder;
+  text-align: center;
 }
 
 .weather-error button {
@@ -101,6 +103,19 @@ border-bottom-right-radius */
 .weather-error button:hover {
   background-color: rgb(29, 91, 87);
 }
+
+
+.favorite-star {
+  position: absolute;
+  top: -30px;
+  right: 10%;
+}
+.favorite-star:hover {
+  color: rgb(50, 159, 153);
+
+}
+
+
 
 @media (min-width: 400px) {
 }
@@ -125,3 +140,4 @@ border-bottom-right-radius */
     font-size: 200px;
   }
 }
+

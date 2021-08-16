@@ -1,16 +1,20 @@
-//this is the access point for all things database related!
+
 
 const db = require('./db')
 
 const User = require('./models/User')
 const Location = require('./models/Location')
+const UserLocation = require('./models/UserLocation')
 
-//associations could go here!
+
+User.hasMany(UserLocation)
+UserLocation.belongsTo(User)
 
 module.exports = {
   db,
   models: {
     User,
-    Location
+    Location,
+    UserLocation,
   },
 }

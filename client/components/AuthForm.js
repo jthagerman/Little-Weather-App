@@ -43,7 +43,7 @@ const AuthFormLogin = (props) => {
 };
 
 const AuthFormSignUp = (props) => {
-  const { name, displayName, handleSubmit } = props;
+  const { name, displayName, handleSubmit,error } = props;
 
   return (
     <section className="auth">
@@ -67,7 +67,7 @@ const AuthFormSignUp = (props) => {
           <div>
             <button type="submit">{displayName}</button>
           </div>
-          {/* {error && error.response && <div> {error.response.data} </div>} */}
+          {error && error.response && <div> {error.response.data} </div>}
         </form>
       </div>
     </section>

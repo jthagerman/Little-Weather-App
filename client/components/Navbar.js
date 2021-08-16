@@ -16,7 +16,9 @@ import bg10 from "../../public/images/1winter.jpg";
 import bg11 from "../../public/images/1milk.jpg";
 // import bg12 from '../../public/images/1thunder.jpg'
 // import bg9 from '../../public/images/tree-736885.jpg'
-import { List } from "react-bootstrap-icons";
+import { Back, List } from "react-bootstrap-icons";
+
+import Background from "./Background.js"
 
 let bg = [bg1, bg2, bg4, bg6, bg7, bg8, bg9, bg10, bg11];
 
@@ -24,49 +26,67 @@ const getRandomBGPath = () => {
   return bg[Math.floor(Math.random() * bg.length)];
 };
 
-const Navbar = ({ handleClick, isLoggedIn }) => (
-  <>
-    {isLoggedIn ? (
-      <section className="nav-bar">
-        {/* The navbar will show these links after you log in */}
-        <SearchBox />
-        <Link to="/home">Home</Link>
-        <a href="#" onClick={handleClick}>
-          Logout
-        </a>
-      </section>
-    ) : (
-      <section className="nav-bar">
-        <div className="nav-left">
-          <Link to="/"><span className="nav-logo" style={{ visibility: "visible" }}>
-            Little<span className="purple">Weather</span><span className="light-green">App</span>
-          </span></Link>
-          {/* <a href="#" className="nav-link hidden-when-small">
-            Hourly
-          </a>
-          <a href="# " className="nav-link hidden-when-small">
+const Navbar = (({ handleClick, isLoggedIn, }) => {
+
+
+  return (
+    <>
+      {isLoggedIn ? (
+        <section className="nav-bar">
+          <div className="nav-left">
+            <Link to="/">
+              <span className="nav-logo" style={{ visibility: "visible" }}>
+                Little<span className="purple">Weather</span>
+                <span className="light-green">App</span>
+              </span>
+            </Link>
+            <Link to="/home" className="nav-link hidden-when-small">
+            My Home
+          </Link>
+          {/* <a href="# " className="nav-link hidden-when-small">
             10-Day
           </a> */}
-        </div>
+          </div>
 
-        <div className="nav-right hidden-when-small">
-          <SearchBox />
-          <Link to="/login" className="nav-link ">
-            Login
-          </Link>
-          <Link to="/signup">
-            <button>Sign Up</button>
-          </Link>
-        </div>
-        <List size={60} className="hamburger" />
-      </section>
-    )}
-    <section>
-      <div id="gradient-bg"></div>
-      <img src={getRandomBGPath()} className="banner" />
-    </section>
-  </>
-);
+          <div className="nav-right hidden-when-small">
+            <SearchBox />
+            <Link to="/account" className="nav-link ">
+              Account
+            </Link>
+            <button onClick={handleClick}>
+              Logout
+            </button>
+          </div>
+          <List size={60} className="hamburger" />
+        </section>
+      ) : (
+        <section className="nav-bar">
+          <div className="nav-left">
+            <Link to="/">
+              <span className="nav-logo" style={{ visibility: "visible" }}>
+                Little<span className="purple">Weather</span>
+                <span className="light-green">App</span>
+              </span>
+            </Link>
+          </div>
+
+          <div className="nav-right hidden-when-small">
+            <SearchBox />
+            <Link to="/login" className="nav-link ">
+              Login
+            </Link>
+            <Link to="/signup">
+              <button>Sign Up</button>
+            </Link>
+          </div>
+          <List size={60} className="hamburger" />
+        </section>
+
+      )}
+      <Background/>
+    </>
+  );
+});
 
 /**
  * CONTAINER
@@ -74,6 +94,8 @@ const Navbar = ({ handleClick, isLoggedIn }) => (
 const mapState = (state) => {
   return {
     isLoggedIn: !!state.auth.id,
+    username: state.auth.id,
+    favorites: state.favoritesReducer.favorites
   };
 };
 

@@ -11,6 +11,9 @@ import ErrorLoadingPage from "./handlers/ErrorLoadingPage";
 import Chart from "./Chart";
 import RainDonut from "./RainDonut";
 import BarChart from "./BarChart";
+import { StarFill, Star } from "react-bootstrap-icons";
+import { ToastContainer, toast } from "react-toastify";
+import { setFavoritesThunk, deleteFavoriteThunk } from "../../store/favorites";
 
 class Weather extends React.Component {
   constructor(props) {
@@ -19,17 +22,35 @@ class Weather extends React.Component {
       loading: false,
       error: false,
       selected: "now",
+      favorited: false,
     };
     this.handleSwitches = this.handleSwitches.bind(this);
+    this.handleFavorites = this.handleFavorites.bind(this);
+    this.removeFavorites = this.removeFavorites.bind(this);
   }
 
   componentDidMount() {
     try {
       if (this.props.history.location.state.data) {
         let location = this.props.location.state.data;
-        this.props.setLocation(this.props.history.location.state.data)
+        console.log(
+          "i need",
+          location.lat,
+          location.lng,
+          this.props.history.location.state.data
+        );
+        this.props.setLocation(this.props.history.location.state.data);
         this.props.getWeather(location.lat, location.lng);
         this.setState({ loading: true });
+      }
+      if (this.props.favorites) {
+        let currentCity = this.props.theLocation.zip;
+        let favoritesList = this.props.favorites;
+        favoritesList.forEach((element) => {
+          if (element.zip === currentCity) {
+            this.setState({ favorited: true });
+          }
+        });
       }
     } catch (error) {
       console.log("NO WEATHER DATA");
@@ -38,6 +59,8 @@ class Weather extends React.Component {
   }
 
   componentDidUpdate(previousProps) {
+  console.log("i am updating")
+    console.log(previousProps.favorites, this.props.favorites);
     if (previousProps.weather) {
       if (previousProps.weather.forecast !== this.props.weather.forecast) {
         this.setState({ loading: false });
@@ -46,6 +69,47 @@ class Weather extends React.Component {
         }
       }
     }
+    if (previousProps.favorites != this.props.favorites) {
+      let currentCity = this.props.theLocation.zip;
+      let favoritesList = this.props.favorites;
+      favoritesList.forEach((element) => {
+        if (element.zip === currentCity) {
+          this.setState({ favorited: true });
+        }
+      });
+    }
+
+  }
+  removeFavorites() {
+    toast.dark(
+      `${this.props.theLocation.city} Was Removed From Your Favorites`,
+      {
+        position: "bottom-right",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+      }
+    );
+    console.log(this.props.theLocation.zip, this.props.auth.id);
+    this.props.deleteFavorite(this.props.theLocation.zip, this.props.auth.id);
+    this.setState({ favorited: false });
+  }
+
+  handleFavorites() {
+    toast.dark(`${this.props.theLocation.city} Was Added To Your Favorites`, {
+      position: "bottom-right",
+      autoClose: 4000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+    });
+    this.props.addFavorite(this.props.theLocation, this.props.auth.id);
+    this.setState({ favorited: true });
   }
 
   handleSwitches(event) {
@@ -85,7 +149,28 @@ class Weather extends React.Component {
                     {this.props.weather.location.city},{" "}
                     {this.props.weather.location.state}
                   </div>
+
                   <section className="hero">
+                    {this.props.auth === "" ? (
+                      <span></span>
+                    ) : (
+                      <span>
+                        {this.state.favorited === true ? (
+                          <StarFill
+                            onClick={() => this.removeFavorites()}
+                            className="favorite-star"
+                            size={35}
+                          />
+                        ) : (
+                          <Star
+                            onClick={() => this.handleFavorites()}
+                            className="favorite-star"
+                            size={35}
+                          />
+                        )}
+                      </span>
+                    )}
+
                     {this.state.selected === "10-day" ? (
                       <div className="seven-day">
                         <DailyModule weather={this.props.weather.forecast} />
@@ -141,13 +226,17 @@ class Weather extends React.Component {
                     </div>
                   </section>
                   <section className="bar-holder">
-                    <BarChart weather={this.props.weather.forecast}/>
+                    <BarChart weather={this.props.weather.forecast} />
                   </section>
                   <div id="space"></div>
 
-                  <Hourly weather={this.props.weather} stateName={this.props.weather.location} />
+                  <Hourly
+                    weather={this.props.weather}
+                    stateName={this.props.weather.location}
+                  />
                 </>
               )}
+              <ToastContainer />
             </div>
           )}
         </>
@@ -158,13 +247,18 @@ class Weather extends React.Component {
 const mapState = (state) => {
   return {
     weather: state.weatherReducer,
+    auth: state.auth,
+    theLocation: state.locationReducer.location,
+    favorites: state.favoritesReducer.favorites,
   };
 };
 
 const mapDispatch = (dispatch) => {
   return {
     getWeather: (lat, lon) => dispatch(getCurrentWeatherThunk(lat, lon)),
-    setLocation: (location) => dispatch(setLocation(location))
+    setLocation: (location) => dispatch(setLocation(location)),
+    addFavorite: (data, user) => dispatch(setFavoritesThunk(data, user)),
+    deleteFavorite: (zip, user) => dispatch(deleteFavoriteThunk(zip, user)),
   };
 };
 

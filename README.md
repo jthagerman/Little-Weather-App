@@ -1,4 +1,4 @@
-# FS-App-Template
+# Stackathon Little Weather App
 
 ## Setup
 

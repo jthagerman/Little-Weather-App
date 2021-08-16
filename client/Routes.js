@@ -24,8 +24,11 @@ class Routes extends Component {
       <section>
         {isLoggedIn ? (
           <Switch>
+            <Route path="/" exact component={Homepage} />
             <Route path="/home" component={Home} />
             <Route path="/search/:query" component={Search} />
+            <Route exact path="/weather" component={Weather} />
+            <Route path="/about" component={About}/>
             <Redirect to="/home" />
           </Switch>
         ) : (
@@ -36,11 +39,7 @@ class Routes extends Component {
             <Route path="/signup" component={Signup} />
             <Route exact path="/weather" component={Weather} />
             <Route path="/about" component={About}/>
-            {/* <Routet
-              exact
-              part="/weather/:forecast"
-              component={ForecastHandler}
-            /> */}
+            <Route component={Homepage} />
           </Switch>
         )}
       </section>

@@ -1,14 +1,14 @@
 
 
 .auth {
-  margin-top: 50px;
+  margin-top: 20px;
   display: block;
   margin: auto;
   max-width: 800px;
 }
 
 .auth h1{
-  font-size: 50px;
+  font-size: 30px;
 }
 
 
@@ -40,15 +40,15 @@
 }
 
 .auth h1{
-  margin-top: 30px;
-  margin-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
 .auth h2 {
-  margin: 12px;
+  margin: 6px;
 }
 
 .auth a {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
 
 }
@@ -60,7 +60,7 @@
 #auth-error {
   margin-top: 10px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
 
 }
 
@@ -69,4 +69,33 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+
+@media (min-width: 680px) {
+  .auth h1{
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 50px;
+    word-spacing: 6px;
+  }
+  .auth h2 {
+    margin: 12px;
+  }
+
+  .auth a {
+    font-size: 18px;
+
+  }
+
+  .auth {
+    margin-top: 50px;
+  }
+
+  #auth-error {
+    font-size: 18px;
+  }
+
+
+
 }
