@@ -31,7 +31,7 @@
 
 .search-input-large {
   border-radius: 999px;
-  max-width: 450px;
+
   font-size: 18px;
   border: 0px;
   margin: 3px;
@@ -151,6 +151,10 @@
     /* filter: blur(0.1px);
     -webkit-filter: blur(0.1px); */
     opacity: 80%;
+  }
+  .search-input-large {
+    width: 450px;
+
   }
 }
 
