@@ -1,13 +1,12 @@
-const bg1 = "/images/p1.jpg";
-const bg2 = "/images/p2.jpg"; //
+const bg1 = "/images/p1.jpg"
+const bg2 = "/images/p2.jpg";
 const bg3 = "/images/hills-615429_1920.jpg";
-const bg4 = "/images/p3.jpg"; //
+const bg4 = "/images/p3.jpg";
 const bg5 = "/images/tulips.jpg";
 const bg6 = "/images/forest-931706.jpg";
 const bg7 = "/images/forest-3394066.jpg";
-
-const bg8 = "/images/p5.jpg"; //= "/images/tree-736875.jpg";
-const bg9 = "/images/p6.jpg"; //= "/images/1field.jpg";
+const bg8 = "/images/p5.jpg";
+const bg9 = "/images/p6.jpg";
 const bg10 = "/images/1winter.jpg";
 const bg11 = "/images/tree-736875.jpg";
 const bg12 = "/images/1field.jpg";

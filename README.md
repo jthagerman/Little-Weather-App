@@ -13,7 +13,7 @@ This application was created during four days as my personal project as part of 
 * Experiment with a few node libraries, mainly I used chart.js.
 
 
-## How I build It
+## How I built It
 
 So to get the weather data I used the free API from the National Weather service.  Using this is was probably the biggest bottleneck of the project.  The NWS api albeit easy to use, is rather unreliable, timing out constantly and doesn't actually provide much weather data.  It also uses Latitude and Longitude values as input, so I build by own databse of zipcodes and city names, that is queried so that my website can send in a request to the NWS. But its not that simple as the NWS also requires a 3 digit weather station code along with the Lat and Lng values, so you have to have call them to get those to in turn call them againto get the weather data.
 
